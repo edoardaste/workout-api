@@ -11,7 +11,7 @@ router = APIRouter()
 
 @router.post(
     '/', 
-    summary='Criar uma nova Categoria',
+    summary='Criar uma nova categoria',
     status_code=status.HTTP_201_CREATED,
     response_model=CategoriaOut,
 )
@@ -30,7 +30,6 @@ async def post(
     
 @router.get(
     '/', 
-    summary='Consultar todas as Categorias',
     status_code=status.HTTP_200_OK,
     response_model=list[CategoriaOut],
 )
@@ -42,7 +41,6 @@ async def query(db_session: DatabaseDependency) -> list[CategoriaOut]:
 
 @router.get(
     '/{id}', 
-    summary='Consulta uma Categoria pelo id',
     status_code=status.HTTP_200_OK,
     response_model=CategoriaOut,
 )
